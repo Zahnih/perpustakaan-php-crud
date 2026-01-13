@@ -1,0 +1,242 @@
+html,
+body,
+#wrapper {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+/* Sidebar */
+#sidebar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 250px;
+  background: linear-gradient(180deg, #2c3e50, #000000);
+
+  color: white;
+  z-index: 1000;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+/* Page Content */
+#page-content-wrapper {
+  flex: 1;
+  padding: 20px;
+  margin-left: 250px;
+  transition: all 0.3s ease;
+}
+
+/* When sidebar collapsed */
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: -250px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+  margin-left: 0;
+}
+
+/* Sidebar Heading */
+.sidebar-heading {
+  font-size: 1.5rem;
+  background: #212529;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Sidebar Item */
+.sidebar-item {
+  padding: 15px 20px;
+  transition: all 0.3s ease;
+}
+
+.sidebar-item:hover {
+  background-color: #495057;
+  color: #79fbff !important;
+  transform: scale(1.05);
+  border-radius: 10px;
+}
+
+/* Navbar Toggle Button */
+#menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: -250px;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    margin-left: 0;
+  }
+}
+/* Efek Hover untuk Kartu Statistik */
+.statistik-card {
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  border-radius: 1rem; /* ini sudut tumpul 16px */
+}
+
+.statistik-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Animasi saat pertama muncul */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.statistik-card {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Untuk aktivitas terbaru card */
+.card.activity-card {
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card.activity-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.table {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* ===== Login Page Styles ===== */
+/* ===== Login Page Styles ===== */
+body.login-page {
+  background: url("assets/bgtes.webp") no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.login-card {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-card input {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.login-card input::placeholder {
+  color: #ddd;
+}
+
+.login-card input:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.login-card .btn-primary {
+  background-color: #0d6efd;
+  border: none;
+  font-weight: bold;
+}
+
+.login-card .btn-primary:hover {
+  background-color: #0b5ed7;
+}
+
+/* Sidebar minimize style */
+#wrapper.minimized #sidebar-wrapper {
+  width: 80px;
+}
+
+#wrapper.minimized #sidebar-wrapper .sidebar-text {
+  display: none;
+}
+
+#wrapper.minimized #page-content-wrapper {
+  margin-left: 80px;
+}
+
+/* Normal sidebar */
+#sidebar-wrapper {
+  width: 250px;
+  transition: all 0.3s ease;
+}
+
+#page-content-wrapper {
+  margin-left: 250px;
+  transition: all 0.3s ease;
+}
+
+/* Saat sidebar di-minimize */
+#wrapper.minimized #sidebar-wrapper {
+  width: 60px;
+  transition: width 0.3s ease;
+}
+
+#wrapper.minimized .sidebar-text {
+  display: none;
+}
+
+#wrapper #sidebar-wrapper {
+  width: 250px;
+  transition: width 0.3s ease;
+}
+
+/* Efek Hover untuk Kartu Buku */
+.card.buku-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.buku-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.3);
+  z-index: 5;
+}
+
+.card.buku-card .card-title {
+  font-size: 1rem; /* atau ubah sesuai keinginan, misalnya 0.85rem */
+  font-weight: 600;
+  min-height: 40px; /* agar tingginya konsisten jika judulnya panjang */
+}
+
+.card.buku-card .card-text {
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
